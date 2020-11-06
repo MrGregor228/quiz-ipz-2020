@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Quiz</title>
+</head>
+<body>
+    <main>
+        <section>
+            <div class="quiz-card">
+                <div class="quiz-header">
+                    <h2>Quiz</h2>
+                </div>
+                <div class="quiz-body">
+                    <h3 class="quiz-question"><span class="question-number">1</span><span class="question">Який HTML5 тег задає навігацію на веб-сайті?</span></h3>
+                    <div class="radio-group">
+                        <label><input type="radio" name="answer" value="a"><span>answer</span></label>
+                        <label><input type="radio" name="answer" value="b"><span>answer</span></label>
+                        <label><input type="radio" name="answer" value="c"><span>answer</span></label>
+                        <label><input type="radio" name="answer" value="d"><span>answer</span></label>
+                        <label><input type="radio" name="answer" value="e"><span>answer</span></label>
+                    </div>
+                    <div class="result">
+                        <h3>Ваш результат: <span></span></h3>
+                    </div>
+                    <div class="next-question">
+                        <button id="nxt_quest" disabled>Наступне питання</button>
+                        <p><span class="correct__answer"></span> / <span class="total__amount"></span></p>
+                    </div>
+                </div>
+            </div>
+        </section>	
+    </main>
+    <script src="js/js.js"></script>
+</body>
+</html>

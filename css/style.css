@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Goblin+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+/* line 5, ../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 6, ../scss/style.scss */
+button {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* line 15, ../scss/style.scss */
+main section {
+  font-family: 'Goblin One', cursive;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+/* line 25, ../scss/style.scss */
+main section .quiz-card {
+  max-width: 480px;
+  height: auto;
+  width: 100%;
+  box-shadow: 0 0 0 1px lightgray;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+/* line 34, ../scss/style.scss */
+main section .quiz-card .quiz-header {
+  background-color: #1E88E5;
+  padding: 10px 6px;
+  text-align: center;
+}
+/* line 39, ../scss/style.scss */
+main section .quiz-card .quiz-header h2 {
+  font-size: 26px;
+  font-weight: bold;
+  color: white;
+}
+/* line 46, ../scss/style.scss */
+main section .quiz-card .quiz-body {
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 20px 15px 15px 15px;
+}
+/* line 50, ../scss/style.scss */
+main section .quiz-card .quiz-body h3 {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 1.5;
+}
+/* line 55, ../scss/style.scss */
+main section .quiz-card .quiz-body h3 .question-number {
+  padding: 4px 10px;
+  margin-right: 6px;
+  background-color: #1E88E5;
+  color: white;
+}
+/* line 62, ../scss/style.scss */
+main section .quiz-card .quiz-body .result {
+  height: 30vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+/* line 68, ../scss/style.scss */
+main section .quiz-card .quiz-body .radio-group {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+/* line 73, ../scss/style.scss */
+main section .quiz-card .quiz-body .radio-group label {
+  padding: 10px 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  background-color: #eeeeee;
+  box-shadow: inset 0 0 5px lightgray;
+  transition: .1s linear;
+}
+/* line 84, ../scss/style.scss */
+main section .quiz-card .quiz-body .radio-group label:not(:nth-of-type(1)) {
+  margin-top: 10px;
+}
+/* line 88, ../scss/style.scss */
+main section .quiz-card .quiz-body .radio-group label span {
+  margin-left: 5px;
+}
+/* line 92, ../scss/style.scss */
+main section .quiz-card .quiz-body .radio-group label:hover {
+  background-color: #e1e1e1;
+}
+/* line 96, ../scss/style.scss */
+main section .quiz-card .quiz-body .radio-group label.active {
+  background-color: #1E88E5;
+  color: white;
+  box-shadow: inset 0 0 0 lightgray, 0 0 5px gray;
+}
+/* line 104, ../scss/style.scss */
+main section .quiz-card .quiz-body .next-question {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* line 109, ../scss/style.scss */
+main section .quiz-card .quiz-body .next-question #nxt_quest {
+  background-color: #1E88E5;
+  border-radius: 8px;
+  padding: 7px 11px;
+  color: white;
+  font-size: 1rem;
+  transition: .2s linear;
+}
+/* line 117, ../scss/style.scss */
+main section .quiz-card .quiz-body .next-question #nxt_quest:disabled {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+/* line 128, ../scss/style.scss */
+main section .quiz-card .quiz-body .next-question #nxt_quest:focus {
+  box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.2);
+}
+/* line 132, ../scss/style.scss */
+main section .quiz-card .quiz-body .next-question p {
+  padding: 7px 11px;
+  background-color: #1E88E5;
+  color: white;
+}
