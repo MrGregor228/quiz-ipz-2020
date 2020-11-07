@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Goblin+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
-/* line 5, ../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -22,45 +22,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -74,7 +74,41 @@ button {
   cursor: pointer;
 }
 
-/* line 15, ../scss/style.scss */
+/* line 14, ../scss/style.scss */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #1E88E5;
+  line-height: 1;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+/* line 23, ../scss/style.scss */
+header .user {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+/* line 28, ../scss/style.scss */
+header .user .user-img {
+  border-radius: 25px;
+  width: 25px;
+  height: 25px;
+  border-radius: 30px;
+  margin-right: 10px;
+  background-image: url("https://cdn.pixabay.com/photo/2018/04/18/18/56/user-3331257_960_720.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* line 40, ../scss/style.scss */
+header .user .user-name {
+  font-weight: bold;
+  color: white;
+}
+
+/* line 48, ../scss/style.scss */
 main section {
   font-family: 'Goblin One', cursive;
   height: 100vh;
@@ -85,7 +119,7 @@ main section {
   padding-right: 15px;
   padding-left: 15px;
 }
-/* line 25, ../scss/style.scss */
+/* line 58, ../scss/style.scss */
 main section .quiz-card {
   max-width: 480px;
   height: auto;
@@ -95,50 +129,53 @@ main section .quiz-card {
   border-radius: 8px;
   overflow: hidden;
 }
-/* line 34, ../scss/style.scss */
+/* line 67, ../scss/style.scss */
 main section .quiz-card .quiz-header {
   background-color: #1E88E5;
   padding: 10px 6px;
   text-align: center;
 }
-/* line 39, ../scss/style.scss */
+/* line 72, ../scss/style.scss */
 main section .quiz-card .quiz-header h2 {
   font-size: 26px;
   font-weight: bold;
   color: white;
 }
-/* line 46, ../scss/style.scss */
+/* line 79, ../scss/style.scss */
 main section .quiz-card .quiz-body {
   font-family: 'Source Sans Pro', sans-serif;
   padding: 20px 15px 15px 15px;
 }
-/* line 50, ../scss/style.scss */
+/* line 83, ../scss/style.scss */
 main section .quiz-card .quiz-body h3 {
   font-weight: bold;
   font-size: 22px;
   line-height: 1.5;
 }
-/* line 55, ../scss/style.scss */
+/* line 88, ../scss/style.scss */
 main section .quiz-card .quiz-body h3 .question-number {
   padding: 4px 10px;
   margin-right: 6px;
   background-color: #1E88E5;
   color: white;
 }
-/* line 62, ../scss/style.scss */
+/* line 96, ../scss/style.scss */
 main section .quiz-card .quiz-body .result {
-  height: 30vh;
+  height: 0vh;
+  overflow: hidden;
+  opacity: 0;
   display: none;
   align-items: center;
   justify-content: center;
+  transition: .2s linear;
 }
-/* line 68, ../scss/style.scss */
+/* line 106, ../scss/style.scss */
 main section .quiz-card .quiz-body .radio-group {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
 }
-/* line 73, ../scss/style.scss */
+/* line 111, ../scss/style.scss */
 main section .quiz-card .quiz-body .radio-group label {
   padding: 10px 5px;
   cursor: pointer;
@@ -150,32 +187,32 @@ main section .quiz-card .quiz-body .radio-group label {
   box-shadow: inset 0 0 5px lightgray;
   transition: .1s linear;
 }
-/* line 84, ../scss/style.scss */
+/* line 122, ../scss/style.scss */
 main section .quiz-card .quiz-body .radio-group label:not(:nth-of-type(1)) {
   margin-top: 10px;
 }
-/* line 88, ../scss/style.scss */
+/* line 126, ../scss/style.scss */
 main section .quiz-card .quiz-body .radio-group label span {
   margin-left: 5px;
 }
-/* line 92, ../scss/style.scss */
+/* line 130, ../scss/style.scss */
 main section .quiz-card .quiz-body .radio-group label:hover {
   background-color: #e1e1e1;
 }
-/* line 96, ../scss/style.scss */
+/* line 134, ../scss/style.scss */
 main section .quiz-card .quiz-body .radio-group label.active {
   background-color: #1E88E5;
   color: white;
   box-shadow: inset 0 0 0 lightgray, 0 0 5px gray;
 }
-/* line 104, ../scss/style.scss */
+/* line 142, ../scss/style.scss */
 main section .quiz-card .quiz-body .next-question {
   margin-top: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-/* line 109, ../scss/style.scss */
+/* line 148, ../scss/style.scss */
 main section .quiz-card .quiz-body .next-question #nxt_quest {
   background-color: #1E88E5;
   border-radius: 8px;
@@ -184,7 +221,7 @@ main section .quiz-card .quiz-body .next-question #nxt_quest {
   font-size: 1rem;
   transition: .2s linear;
 }
-/* line 117, ../scss/style.scss */
+/* line 156, ../scss/style.scss */
 main section .quiz-card .quiz-body .next-question #nxt_quest:disabled {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
@@ -195,13 +232,166 @@ main section .quiz-card .quiz-body .next-question #nxt_quest:disabled {
   user-select: none;
   pointer-events: none;
 }
-/* line 128, ../scss/style.scss */
+/* line 167, ../scss/style.scss */
 main section .quiz-card .quiz-body .next-question #nxt_quest:focus {
   box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.2);
 }
-/* line 132, ../scss/style.scss */
+/* line 172, ../scss/style.scss */
 main section .quiz-card .quiz-body .next-question p {
   padding: 7px 11px;
   background-color: #1E88E5;
   color: white;
+}
+
+/* line 183, ../scss/style.scss */
+.modal {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+/* line 194, ../scss/style.scss */
+.modal * {
+  font-family: 'Montserrat', sans-serif;
+}
+/* line 198, ../scss/style.scss */
+.modal .modal-wrapper {
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px lightgray;
+  display: flex;
+  flex-direction: column;
+  margin-right: 15px;
+  margin-left: 15px;
+  max-width: 320px;
+}
+/* line 209, ../scss/style.scss */
+.modal .modal-wrapper > div {
+  padding: 10px;
+}
+/* line 212, ../scss/style.scss */
+.modal .modal-wrapper > div:first-child {
+  padding: 5px 10px;
+}
+/* line 217, ../scss/style.scss */
+.modal .modal-wrapper .modal-heading {
+  background-color: #1ba4ee;
+  color: white;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+/* line 225, ../scss/style.scss */
+.modal .modal-wrapper .modal-heading .close {
+  padding: 3px;
+  position: relative;
+  background-color: #fff;
+  color: black;
+  border-radius: 30px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  box-shadow: 0 2px 1px black;
+  transition: 0.2s linear;
+}
+/* line 239, ../scss/style.scss */
+.modal .modal-wrapper .modal-heading .close svg {
+  width: 20px;
+  height: 20px;
+}
+/* line 244, ../scss/style.scss */
+.modal .modal-wrapper .modal-heading .close:active {
+  background-color: #f2f2f2;
+  box-shadow: 0 0px 0px black;
+}
+/* line 251, ../scss/style.scss */
+.modal .modal-wrapper .modal-description {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+}
+/* line 257, ../scss/style.scss */
+.modal .modal-wrapper .modal-description h2 {
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+}
+/* line 263, ../scss/style.scss */
+.modal .modal-wrapper .modal-description input[type="text"],
+.modal .modal-wrapper .modal-description select {
+  width: 100%;
+  margin-top: 10px;
+  padding: 7px;
+  outline: none;
+  border: none;
+  background-color: #ededed;
+  border-radius: 5px;
+}
+/* line 274, ../scss/style.scss */
+.modal .modal-wrapper .modal-description select,
+.modal .modal-wrapper .modal-description option {
+  cursor: pointer;
+}
+/* line 279, ../scss/style.scss */
+.modal .modal-wrapper .modal-description .buttons {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+/* line 284, ../scss/style.scss */
+.modal .modal-wrapper .modal-description .buttons button {
+  font-size: 16px;
+  margin-top: 10px;
+  width: 100%;
+  padding: 5px;
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: green;
+}
+/* line 296, ../scss/style.scss */
+.modal .modal-wrapper .modal-description .buttons button:disabled {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+  background-color: gray;
+}
+/* line 306, ../scss/style.scss */
+.modal .modal-wrapper .modal-description .buttons button:active {
+  background-color: #004d00;
+}
+
+/* line 315, ../scss/style.scss */
+.unfilled {
+  color: red;
+  border: 1px solid red;
+}
+/* line 318, ../scss/style.scss */
+.unfilled:after {
+  content: "Fill in the field correctly";
+  color: red;
+  display: block;
+}
+
+/* line 325, ../scss/style.scss */
+.can_send {
+  color: inherit;
+  border: 1px solid green;
+  background-color: rgba(0, 168, 0, 0.5);
 }

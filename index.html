@@ -1,29 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Quiz</title>
+    <title>Тестування</title>
 </head>
+
 <body>
+    <div class="modal">
+        <div class="modal-wrapper">
+            <div class="modal-heading">
+                <span class="close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M207.6 256l107.72-107.72c6.23-6.23 6.23-16.34 0-22.58l-25.03-25.03c-6.23-6.23-16.34-6.23-22.58 0L160 208.4 52.28 100.68c-6.23-6.23-16.34-6.23-22.58 0L4.68 125.7c-6.23 6.23-6.23 16.34 0 22.58L112.4 256 4.68 363.72c-6.23 6.23-6.23 16.34 0 22.58l25.03 25.03c6.23 6.23 16.34 6.23 22.58 0L160 303.6l107.72 107.72c6.23 6.23 16.34 6.23 22.58 0l25.03-25.03c6.23-6.23 6.23-16.34 0-22.58L207.6 256z" />
+                    </svg></span>
+            </div>
+            <div class="modal-description">
+                <h2>Заповніть інформацію</h2>
+                <input type="text" name="ФИО" placeholder="Фамілія Ім'я">
+                <select type="text" name="Группа" placeholder="Группа">
+                    <option value="0">Оберіть свою группу</option>
+                    <option value="ІПЗ-2020-1">ІПЗ-2020-1</option>
+                    <option value="ІПЗ-2020-2">ІПЗ-2020-2</option>
+                </select>
+                <div class="buttons">
+                    <button type="submit" name="yes">Зберегти</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="user-info">
+            <div class="user">
+                <div class="user-img">				
+                </div>
+                <div class="user-name">
+                    <p><span class="u-name"></span> | <span class="u-group"></span></p>
+                </div>
+            </div>
+        </div>
+    </header>
     <main>
         <section>
             <div class="quiz-card">
                 <div class="quiz-header">
-                    <h2>Quiz</h2>
+                    <h2>Web-Quiz</h2>
                 </div>
                 <div class="quiz-body">
-                    <h3 class="quiz-question"><span class="question-number">1</span><span class="question">Який HTML5 тег задає навігацію на веб-сайті?</span></h3>
+                    <h3 class="quiz-question"><span class="question-number"></span><span class="question"></span></h3>
                     <div class="radio-group">
-                        <label><input type="radio" name="answer" value="a"><span>answer</span></label>
-                        <label><input type="radio" name="answer" value="b"><span>answer</span></label>
-                        <label><input type="radio" name="answer" value="c"><span>answer</span></label>
-                        <label><input type="radio" name="answer" value="d"><span>answer</span></label>
-                        <label><input type="radio" name="answer" value="e"><span>answer</span></label>
+                        <label><input type="radio" name="answer" value="a"><span></span></label>
+                        <label><input type="radio" name="answer" value="b"><span></span></label>
+                        <label><input type="radio" name="answer" value="c"><span></span></label>
+                        <label><input type="radio" name="answer" value="d"><span></span></label>
+                        <label><input type="radio" name="answer" value="e"><span></span></label>
                     </div>
                     <div class="result">
-                        <h3>Ваш результат: <span></span></h3>
+                        <h3>Підсумок балів: <span></span></h3>
                     </div>
                     <div class="next-question">
                         <button id="nxt_quest" disabled>Наступне питання</button>
@@ -31,8 +66,11 @@
                     </div>
                 </div>
             </div>
-        </section>	
+        </section>
     </main>
     <script src="js/js.js"></script>
+    <script src="js/user.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </body>
+
 </html>

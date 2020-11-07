@@ -51,6 +51,10 @@ let total_amount = 0,
 
 function cleanFields() {
     result_container.style.display = "flex";
+    setTimeout(()=>{
+        result_container.style.height = '30vh';
+        result_container.style.opacity = "1";
+    }, 275);
     result_span.textContent = `${correct_answer_amount} / ${total_amount}`;
     radio_group.remove();
     question.remove();
@@ -70,21 +74,18 @@ getData(quiz_url).then((data) => {
     });
     question_number.textContent = data[0].number;
     question.textContent = data[0].question;
-    // radios.forEach((item)=>{
-    //     item.addEventListener('click', ()=>{
-    //         console.log(choosed_variant + " = ",data[num].right == choosed_variant);
-    //         console.log(num);
-    //         console.log(data[num]);
-    //     });
-    // });
+    
     next_question_btn.addEventListener('click', () => { 
+        
         if (num <= data.length) {
             if(data[num].right == choosed_variant) {
-                correct_answer_amount = correct_answer_amount + +data[num].amount
+                correct_answer_amount = correct_answer_amount + +data[num].amount;
                 correct_answer_span.textContent = correct_answer_amount;
             } 
         } else {
-            cleanFields();
+            setTimeout(()=>{
+                cleanFields();
+            }, 275);
         } 
         num++;
         if (num <= data.length - 1) {
@@ -103,10 +104,11 @@ getData(quiz_url).then((data) => {
             if (num == data.length - 1) {
                 next_question_btn.textContent = "Завершити";
             }
-
             
         } else {
-            cleanFields();
+            setTimeout(()=>{
+                cleanFields();
+            }, 275);
         }        
     });
 });
