@@ -52,8 +52,8 @@ modalButton.addEventListener('click', () => {
     groupName.textContent = userGroup.value;
     userName.textContent = nameInput.value;
 
-    user_send_name = userGroup.value;
-    user_send_group = nameInput.value;
+    user_send_name = nameInput.value;
+    user_send_group = userGroup.value;
 
     modalWindow.style.display = "none";
 
