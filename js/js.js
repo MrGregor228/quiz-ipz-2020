@@ -64,22 +64,33 @@ function cleanFields() {
 }    
 
 getData(quiz_url).then((data) => {
+    let nums = [],
+        numsLen = data.length,
+        maxNum = data.length-1,
+        nummmer;
+    while (nums.length < numsLen) {
+        nummmer = Math.round(Math.random() * maxNum);
+        if (nums.indexOf(nummmer) === -1) {
+            nums.push(nummmer);
+        }
+    }
+    
     for (let i = 0; i < data.length; i++) {
         total_amount = total_amount + +data[i].amount;
     }
     total_amount_span.textContent = total_amount;
     correct_answer_span.textContent = correct_answer_amount;
     answ.forEach((item, i) => {
-        item.textContent = data[0].answers[i];
+        item.textContent = data[nums[num]].answers[i];
     });
-    question_number.textContent = data[0].number;
-    question.textContent = data[0].question;
+    question_number.textContent = data[nums[num]].number;
+    question.textContent = data[nums[num]].question;
     
     next_question_btn.addEventListener('click', () => { 
         
         if (num <= data.length) {
-            if(data[num].right == choosed_variant) {
-                correct_answer_amount = correct_answer_amount + +data[num].amount;
+            if(data[nums[num]].right == choosed_variant) {
+                correct_answer_amount = correct_answer_amount + +data[nums[num]].amount;
                 correct_answer_span.textContent = correct_answer_amount;
             } 
         } else {
@@ -89,11 +100,14 @@ getData(quiz_url).then((data) => {
         } 
         num++;
         if (num <= data.length - 1) {
+
             answ.forEach((item, i) => {
-                item.textContent = data[num].answers[i];
+                item.textContent = data[nums[num]].answers[i];
             });
-            question_number.textContent = data[num].number;
-            question.textContent = data[num].question;
+
+            question_number.textContent = data[nums[num]].number;
+            question.textContent = data[nums[num]].question;
+
             for (i = 0; i < labels.length; i++) {
                 labels[i].classList.remove("active");
                 radios[i].checked = false;
