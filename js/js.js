@@ -87,7 +87,9 @@ getData(quiz_url).then((data) => {
     question.textContent = data[nums[num]].question;
     
     next_question_btn.addEventListener('click', () => { 
-        
+        // console.log('---------------------');
+        // console.log(data[nums[num]].question, data[nums[num]].answers, `\n${data[nums[num]].right}\nRight answer? ${data[nums[num]].right == choosed_variant}`);
+        // console.log('---------------------');
         if (num <= data.length) {
             if(data[nums[num]].right == choosed_variant) {
                 correct_answer_amount = correct_answer_amount + +data[nums[num]].amount;
