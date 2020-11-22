@@ -128,7 +128,7 @@ function writeData() {
     if (!localStorage.getItem('User_Name') || !localStorage.getItem('User_Group')) {
         console.log("LocalStorage User_Name or User_Group is not defined");
     } else {
-        firebase.database().ref("User").push({
+        firebase.database().ref("User").set({
             name: localStorage.getItem('User_Name'),
             group: localStorage.getItem('User_Group')
         });
