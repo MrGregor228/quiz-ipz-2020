@@ -1,7 +1,16 @@
 let chatID = "-1001278275360";
 let bot_token = "1313045424:AAHvgn0WzgnEfg-XrxD_AS1Ox_qWfzyeaH4";
 let msg_text = "";
-
+let id;
+function generateID() {
+    var length = 10,
+        charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+        retVal = "";
+    for (var i = 0, n = charset.length; i < length; ++i) {
+        retVal += charset.charAt(Math.floor(Math.random() * n));
+    }
+    return retVal;
+}
 // !    Для телеграма
 
 let userName = document.querySelector('.user-name .u-name'),
@@ -72,11 +81,17 @@ let checkFieldsInterval = setInterval(() => {
 }, 100);
 
 window.addEventListener('load', () => {
-    if (localStorage.getItem('User_Name') != null && localStorage.getItem('User_Group') != null) {
+    if (localStorage.getItem("User_ID") != null) {
+        id = localStorage.getItem("User_ID");
+        console.log(id);
+    } else {
+        id = localStorage.setItem('User_ID', generateID());
+    }
+    if (localStorage.getItem('User_Name') != null && localStorage.getItem('User_Group') != null && localStorage.getItem('User_ID') != null) {
         userName.textContent = localStorage.getItem('User_Name');
         groupName.textContent = localStorage.getItem('User_Group');
         clearInterval(checkFieldsInterval);
-        modalWindow.style.display = "none";
+        modalWindow.style.display = "none";    
 
         user_send_name = localStorage.getItem('User_Name');
         user_send_group = localStorage.getItem('User_Group');
@@ -123,8 +138,9 @@ let firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig); 
-
-firebase.database().ref("Users").push({
+let fbUser = 'User-' + localStorage.getItem("User_ID");
+firebase.database().ref(fbUser).set({
     name: localStorage.getItem("User_Name"),
-    group: localStorage.getItem("User_Group")
+    group: localStorage.getItem("User_Group"),
+    id: localStorage.getItem("User_ID")
 });
