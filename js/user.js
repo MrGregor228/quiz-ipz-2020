@@ -124,7 +124,7 @@ let firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig); 
 
-firebase.database().ref("User").push({
+firebase.database().push({
     name: localStorage.getItem("User_Name"),
     group: localStorage.getItem("User_Group")
 });
