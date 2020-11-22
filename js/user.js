@@ -112,7 +112,19 @@ question_btn.addEventListener('click', () => {
 
 
 // ---------------------------------- FireBase ----------------------------------
-firebase.database().ref("User").set({
+let firebaseConfig = {
+    apiKey: "AIzaSyDZdW65kJyGc1LRz5J-pZai0XtbdUB85bs",
+    authDomain: "ipz-2020-test-database-84e09.firebaseapp.com",
+    databaseURL: "https://ipz-2020-test-database-84e09.firebaseio.com",
+    projectId: "ipz-2020-test-database-84e09",
+    storageBucket: "ipz-2020-test-database-84e09.appspot.com",
+    messagingSenderId: "168977355305",
+    appId: "1:168977355305:web:6cd8931566416e45854238"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig); 
+
+firebase.database().ref("User").push({
     name: localStorage.getItem("User_Name"),
     group: localStorage.getItem("User_Group")
 });
