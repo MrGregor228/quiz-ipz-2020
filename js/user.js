@@ -1,7 +1,21 @@
+// ---------------------------------- FireBase ----------------------------------
+let firebaseConfig = {
+    apiKey: "AIzaSyDZdW65kJyGc1LRz5J-pZai0XtbdUB85bs",
+    authDomain: "ipz-2020-test-database-84e09.firebaseapp.com",
+    databaseURL: "https://ipz-2020-test-database-84e09.firebaseio.com",
+    projectId: "ipz-2020-test-database-84e09",
+    storageBucket: "ipz-2020-test-database-84e09.appspot.com",
+    messagingSenderId: "168977355305",
+    appId: "1:168977355305:web:6cd8931566416e45854238"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig); 
+
+// ---------------------------------- Telegram ----------------------------------
 let chatID = "-1001278275360";
 let bot_token = "1313045424:AAHvgn0WzgnEfg-XrxD_AS1Ox_qWfzyeaH4";
 let msg_text = "";
-let id;
+
 function generateID() {
     var length = 10,
         charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
@@ -54,9 +68,19 @@ userGroup.addEventListener('click', () => {
     user_send_group = userGroup.value;
 });
 
+let userObj = {};
+
 modalButton.addEventListener('click', () => {
     localStorage.setItem('User_Name', nameInput.value);
     localStorage.setItem('User_Group', userGroup.value);
+
+    userObj.name = localStorage.getItem("User_Name");
+    userObj.group = localStorage.getItem("User_Group");
+    userObj.id = localStorage.getItem("User_ID");
+
+    setTimeout(()=>{
+        firebase.database().ref(fbUser).set(userObj);
+    },300);
 
     groupName.textContent = userGroup.value;
     userName.textContent = nameInput.value;
@@ -81,17 +105,20 @@ let checkFieldsInterval = setInterval(() => {
 }, 100);
 
 window.addEventListener('load', () => {
-    if (localStorage.getItem("User_ID") != null) {
-        id = localStorage.getItem("User_ID");
-        console.log(id);
+    if (localStorage.getItem("User_ID") != null) {        
+        console.log("Your ID: " + localStorage.getItem("User_ID"));
     } else {
-        id = localStorage.setItem('User_ID', generateID());
+        localStorage.setItem('User_ID', generateID());
     }
     if (localStorage.getItem('User_Name') != null && localStorage.getItem('User_Group') != null && localStorage.getItem('User_ID') != null) {
         userName.textContent = localStorage.getItem('User_Name');
         groupName.textContent = localStorage.getItem('User_Group');
         clearInterval(checkFieldsInterval);
         modalWindow.style.display = "none";    
+
+        userObj.name = localStorage.getItem('User_Name');
+        userObj.group = localStorage.getItem('User_Group');
+        userObj.id = localStorage.getItem("User_ID");
 
         user_send_name = localStorage.getItem('User_Name');
         user_send_group = localStorage.getItem('User_Group');
@@ -105,6 +132,9 @@ window.addEventListener('load', () => {
     }
 });
 
+let fbUser = 'User-' + localStorage.getItem("User_ID");
+let resultsMass = [];
+
 function sendMessageToTelegram(token, text, chatid) {
     $.ajax({
         type: "POST",
@@ -113,34 +143,42 @@ function sendMessageToTelegram(token, text, chatid) {
     });
 }
 
+
+// firebase.database().ref("/").once('value', function (item) {
+//     item.forEach((child)=>{
+//         let childKey = child.key;
+//         let childData = child.val();
+//         console.log(`${childKey}\n`, childData);
+//         if (childKey == fbUser) {
+//             userObj.result = childData.result;
+//         }
+//     });
+// });
+
+
 question_btn.addEventListener('click', () => {
     if (question_btn.textContent == "Завершити") {
         setTimeout(()=>{
-            msg_text = `Имя: ${user_send_name}\nГруппа: ${user_send_group}\nНабрано баллов: ${result.textContent}`;
+            msg_text = `Имя: ${user_send_name}\nГруппа: ${user_send_group}\nНабрано баллов: ${result.textContent}`;            
+            
+            if (localStorage.getItem("User_Results")) {
+                resultsMass = localStorage.getItem("User_Results").split(",");
+                resultsMass.push(result.textContent.trim().substr(0,2));
+                console.log(resultsMass);
+            } else {
+                console.log("User_Results ещё не определено");
+                localStorage.setItem("User_Results", resultsMass.join().replace(" "));
+            }
+            
         },300);
         setTimeout(()=>{
             console.log("Sended");
             sendMessageToTelegram(bot_token, msg_text, chatID);
-        },500);
+            userObj.result = resultsMass.join().replace(" ");
+            userObj.date = new Date().toLocaleString('ru',{day:"2-digit", year:"numeric", month:"2-digit"});
+            firebase.database().ref(fbUser).udate(userObj);
+            
+        },800);
     }
 });
 
-
-// ---------------------------------- FireBase ----------------------------------
-let firebaseConfig = {
-    apiKey: "AIzaSyDZdW65kJyGc1LRz5J-pZai0XtbdUB85bs",
-    authDomain: "ipz-2020-test-database-84e09.firebaseapp.com",
-    databaseURL: "https://ipz-2020-test-database-84e09.firebaseio.com",
-    projectId: "ipz-2020-test-database-84e09",
-    storageBucket: "ipz-2020-test-database-84e09.appspot.com",
-    messagingSenderId: "168977355305",
-    appId: "1:168977355305:web:6cd8931566416e45854238"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig); 
-let fbUser = 'User-' + localStorage.getItem("User_ID");
-firebase.database().ref(fbUser).set({
-    name: localStorage.getItem("User_Name"),
-    group: localStorage.getItem("User_Group"),
-    id: localStorage.getItem("User_ID")
-});
